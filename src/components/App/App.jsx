@@ -5,12 +5,12 @@ import './App.css';
 
 function App() {
 
-    const [ listItems, setListItems ] = useState([]);
+    const [ images, setImages ] = useState([]);
 
-    const getItems = () => {
+    const getImages = () => {
         Axios.get('/gallery')
             .then(response => {
-                setListItems(response);
+                setImages(response);
             })
             .catch(err => {
                 console.error('Error in getItems:', err);
@@ -18,7 +18,7 @@ function App() {
     }
 
     useEffect(() => {
-        getItems();
+        getImages();
     }, []);
 
     return (
