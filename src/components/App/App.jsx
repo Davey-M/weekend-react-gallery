@@ -10,7 +10,7 @@ function App() {
     const getImages = () => {
         Axios.get('/gallery')
             .then(response => {
-                setImages(response);
+                setImages(response.data);
             })
             .catch(err => {
                 console.error('Error in getItems:', err);
@@ -27,7 +27,14 @@ function App() {
                 <h1 className="App-title">Gallery of My Life</h1>
             </header>
             <p>Gallery goes here</p>
-            <img src="images/goat_small.jpg" />
+            {images.map(image => {
+                return (
+                    <div key={image.id}>
+                        <img src={image.path} alt="Image" width="200" />
+                        <p>{image.description}</p>
+                    </div>
+                )
+            })}
         </div>
     );
 }
