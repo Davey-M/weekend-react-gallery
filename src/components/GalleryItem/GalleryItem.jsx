@@ -1,4 +1,11 @@
-function GalleryItem({ image }) {
+import { useState } from "react";
+
+function GalleryItem({ image, updateImage }) {
+
+    const handleClickLike = () => {
+        updateImage(image.id);
+    }
+
     return (
         <>
             <div>
@@ -7,7 +14,7 @@ function GalleryItem({ image }) {
             </div>
             <div>
                 <p>{ image.likes } likes</p>
-                <button>Like</button>
+                <button onClick={handleClickLike}>Like</button>
             </div>
         </>
     )

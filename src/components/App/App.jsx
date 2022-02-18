@@ -21,7 +21,7 @@ function App() {
     }
 
     const updateImage = (id) => {
-        Axios.put(`/gallery/${id}`)
+        Axios.put(`/gallery/like/${id}`)
             .then(response => {
                 getImages();
             })
@@ -40,7 +40,7 @@ function App() {
                 <h1 className="App-title">Gallery of My Life</h1>
             </header>
             <p>Gallery goes here</p>
-            <GalleryList images={images} />
+            <GalleryList images={images} updateImage={updateImage} />
         </div>
     );
 }

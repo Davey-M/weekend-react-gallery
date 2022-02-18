@@ -1,11 +1,11 @@
 import GalleryItem from "../GalleryItem/GalleryItem";
 
-function GalleryList({ images }) {
+function GalleryList({ images, updateImage }) {
     return (
         <>
             <div>
                 {images.map(image => {
-                    return <GalleryItem key={image.id} image={image} />
+                    return <GalleryItem key={image.id} image={image} updateImage={updateImage} />
                 })}
             </div>
         </>
