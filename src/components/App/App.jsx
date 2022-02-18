@@ -17,6 +17,16 @@ function App() {
             })
     }
 
+    const updateImage = (id) => {
+        Axios.put(`/gallery/${id}`)
+            .then(response => {
+                getImages();
+            })
+            .catch(err => {
+                console.error('Error in updateImage:', err);
+            });
+    }
+
     useEffect(() => {
         getImages();
     }, []);
