@@ -4,12 +4,9 @@ import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 
 import './GalleryItem.css';
 
-function GalleryItem({ image, updateImage }) {
+function GalleryItem({ image, updateImage, height }) {
 
     const [ description, toggleDescription ] = useState(false);
-    const [ shape, setShape ] = useState('Tall');
-
-    const thisImage = useRef();
 
     const handleClickLike = () => {
         updateImage(image.id, image.likes + 1);
@@ -19,15 +16,6 @@ function GalleryItem({ image, updateImage }) {
         toggleDescription(!description);
     }
 
-    useEffect(() => {
-
-        console.log(thisImage.current);
-
-        if (thisImage.current.naturalWidth > thisImage.current.naturalHeight) {
-            setShape('Long');
-        }
-    })
-
     return (
         <div className="galleryImage">
             <img 
@@ -36,7 +24,7 @@ function GalleryItem({ image, updateImage }) {
                 style={{borderRadius: '4px'}}
                 onClick={ handleDescriptionToggle }
                 className='image'
-                ref={thisImage}
+                height={height}
             />
             {description && <p className="description">{ image.description }</p>}
             <div className="image-footer">
