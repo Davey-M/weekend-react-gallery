@@ -9,7 +9,7 @@ CREATE TABLE "images" (
     "image-width" INTEGER NOT NULL
 );
 
-INSERT INTO "images" ("path", "description", "likes")
+INSERT INTO "images" ("path", "description", "likes", "image-height", "image-width")
 VALUES
     ('images/goat_small.jpg', 'Photo of a goat taken at Glacier National Park.', 0, 150, 150),
     ( 'images/IMG_20200928_114654851_HDR.jpg', 'A beautiful lake on a hike.', 0, 3072, 4096),
