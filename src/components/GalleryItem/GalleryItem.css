@@ -25,10 +25,14 @@
     text-align: right;
 }
 
-.imageTall {
+/* .imageTall {
     width: 290px;
 }
 
 .imageLong {
     width: 570px;
+} */
+
+.image {
+    max-height: 300px;
 }

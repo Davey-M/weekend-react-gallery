@@ -3,6 +3,7 @@ import GalleryItem from "../GalleryItem/GalleryItem";
 import './GalleryList.css'
 
 function GalleryList({ images, updateImage }) {
+
     return (
         <>
             <div className="image-container">

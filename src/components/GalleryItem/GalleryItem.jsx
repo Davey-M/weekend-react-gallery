@@ -35,7 +35,7 @@ function GalleryItem({ image, updateImage }) {
                 alt="Image Not Found"
                 style={{borderRadius: '4px'}}
                 onClick={ handleDescriptionToggle }
-                className={`image` + shape}
+                className='image'
                 ref={thisImage}
             />
             {description && <p className="description">{ image.description }</p>}
