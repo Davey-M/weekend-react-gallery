@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Button, IconButton } from "@mui/material";
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 
+import './GalleryItem.css';
+
 function GalleryItem({ image, updateImage }) {
 
     const [ description, toggleDescription ] = useState(false);
@@ -32,27 +34,27 @@ function GalleryItem({ image, updateImage }) {
     }
 
     return (
-        <>
-            <div onClick={ handleDescriptionToggle } style={imageStyles}>
-                <img 
-                    src={ image.path }
-                    alt="Image Not Found"
-                    width="200"
-                    style={{borderRadius: '4px'}}
-                />
-                {description && <p style={descriptionStyles}>{ image.description }</p>}
-            </div>
-            <div>
+        <div className="galleryImage">
+            <img 
+                src={ image.path }
+                alt="Image Not Found"
+                width="300"
+                style={{borderRadius: '4px'}}
+                onClick={ handleDescriptionToggle }
+            />
+            {description && <p className="description">{ image.description }</p>}
+            <div className="image-footer">
                 <Button
                     variant="contained"
                     onClick={handleClickLike}
                     size="small"
                     endIcon={<ThumbUpIcon />}
+                    color="primary"
                 >
                     { image.likes }
                 </Button>
             </div>
-        </>
+        </div>
     )
 }
 

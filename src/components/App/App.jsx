@@ -3,10 +3,23 @@ const { useState, useEffect } = React;
 import Axios from 'axios';
 import './App.css';
 
+// mui theme
+import { createTheme } from '@mui/material/styles';
+
 // component imports
 import GalleryList from '../GalleryList/GalleryList';
+import { ThemeProvider } from '@emotion/react';
 
 function App() {
+
+    const theme = createTheme({
+        palette: {
+            primary: {
+                main: '#e79e15',
+                contrastText: 'white'
+            }
+        }
+    })
 
     const [ images, setImages ] = useState([]);
 
@@ -41,11 +54,13 @@ function App() {
 
     return (
         <div className="App">
-            <header className="App-header">
-                <h1 className="App-title">Gallery of My Life</h1>
-            </header>
-            <p>Gallery goes here</p>
-            <GalleryList images={images} updateImage={updateImage} />
+            <ThemeProvider theme={theme}>
+                <header className="App-header">
+                    <h1 className="App-title">Gallery of My Life</h1>
+                </header>
+                {/* <p>Gallery goes here</p> */}
+                <GalleryList images={images} updateImage={updateImage} />
+            </ThemeProvider>
         </div>
     );
 }
