@@ -20,8 +20,13 @@ function App() {
             })
     }
 
-    const updateImage = (id) => {
-        Axios.put(`/gallery/like/${id}`)
+    const updateImage = (id, likes) => {
+
+        const data = {
+            likes,
+        }
+
+        Axios.put(`/gallery/like/${id}`, data)
             .then(response => {
                 getImages();
             })

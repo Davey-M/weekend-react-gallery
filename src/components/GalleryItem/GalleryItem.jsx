@@ -5,7 +5,7 @@ function GalleryItem({ image, updateImage }) {
     const [ description, toggleDescription ] = useState(false);
 
     const handleClickLike = () => {
-        updateImage(image.id);
+        updateImage(image.id, image.likes + 1);
     }
 
     const handleDescriptionToggle = () => {
