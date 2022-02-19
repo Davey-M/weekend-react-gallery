@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { Button, IconButton } from "@mui/material";
+import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 
 function GalleryItem({ image, updateImage }) {
 
@@ -36,12 +38,19 @@ function GalleryItem({ image, updateImage }) {
                     src={ image.path }
                     alt="Image Not Found"
                     width="200"
+                    style={{borderRadius: '4px'}}
                 />
                 {description && <p style={descriptionStyles}>{ image.description }</p>}
             </div>
             <div>
-                <p>{ image.likes } likes</p>
-                <button onClick={handleClickLike}>Like</button>
+                <Button
+                    variant="contained"
+                    onClick={handleClickLike}
+                    size="small"
+                    endIcon={<ThumbUpIcon />}
+                >
+                    { image.likes }
+                </Button>
             </div>
         </>
     )
