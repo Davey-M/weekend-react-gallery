@@ -3,7 +3,7 @@
     /* margin: auto; */
     position: relative;
     background-color: var(--dark);
-    margin: 1rem auto;
+    margin: 0rem;
     padding: 5px;
     border-radius: 4px;
 }
@@ -23,4 +23,12 @@
 .galleryImage .image-footer {
     width: 100%;
     text-align: right;
+}
+
+.imageTall {
+    width: 290px;
+}
+
+.imageLong {
+    width: 570px;
 }
