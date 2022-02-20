@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { Button, IconButton } from "@mui/material";
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 
-function GalleryItem({ image, updateImage }) {
+import './GalleryItem.css';
+
+function GalleryItem({ image, updateImage, height }) {
 
     const [ description, toggleDescription ] = useState(false);
 
@@ -14,45 +16,33 @@ function GalleryItem({ image, updateImage }) {
         toggleDescription(!description);
     }
 
-    const imageStyles = {
-        width: 'max-content',
-        margin: 'auto',
-        position: 'relative',
-    }
-
-    const descriptionStyles = {
-        width: '100%',
-        height: '100%',
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        backgroundColor: '#000000aa',
-        margin: '0rem',
-        color: '#ffffff',
+    const imageHeight = {
+        height: height,
     }
 
     return (
-        <>
-            <div onClick={ handleDescriptionToggle } style={imageStyles}>
-                <img 
-                    src={ image.path }
-                    alt="Image Not Found"
-                    width="200"
-                    style={{borderRadius: '4px'}}
-                />
-                {description && <p style={descriptionStyles}>{ image.description }</p>}
-            </div>
-            <div>
+        <div className="galleryImage">
+            <img 
+                src={ image.path }
+                alt="Image Not Found"
+                style={{borderRadius: '4px'}}
+                onClick={ handleDescriptionToggle }
+                className='image'
+                style={imageHeight}
+            />
+            {description && <p className="description">{ image.description }</p>}
+            <div className="image-footer">
                 <Button
                     variant="contained"
                     onClick={handleClickLike}
                     size="small"
                     endIcon={<ThumbUpIcon />}
+                    color="primary"
                 >
                     { image.likes }
                 </Button>
             </div>
-        </>
+        </div>
     )
 }
 

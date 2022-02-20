@@ -1,0 +1,38 @@
+.galleryImage {
+    /* width: max-content; */
+    /* margin: auto; */
+    position: relative;
+    background-color: var(--dark);
+    margin: 0rem;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.galleryImage .description {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #000000aa;
+    margin: 0rem;
+    color: #ffffff;
+    pointer-events: none;
+}
+
+.galleryImage .image-footer {
+    width: 100%;
+    text-align: right;
+}
+
+/* .imageTall {
+    width: 290px;
+}
+
+.imageLong {
+    width: 570px;
+} */
+
+.image {
+    max-height: 100%;
+}

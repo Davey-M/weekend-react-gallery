@@ -2,6 +2,13 @@
   text-align: center;
 }
 
+:root {
+    --dark: #222;
+    --grey: #474747;
+    --main: #e79e15;
+    --secondary: #5331ec;
+}
+
 .App-header {
   background-color: #222;
   padding: 1em;
