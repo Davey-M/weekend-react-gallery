@@ -1,5 +1,5 @@
 .galleryImage {
-    width: max-content;
+    /* width: max-content; */
     /* margin: auto; */
     position: relative;
     background-color: var(--dark);
@@ -34,5 +34,5 @@
 } */
 
 .image {
-    max-height: 300px;
+    max-height: 100%;
 }
