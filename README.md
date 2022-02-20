@@ -4,8 +4,7 @@
 
 *Duration: 2 days*
 
-Your project description goes here. What problem did you solve? How did you solve it?
+This project is a simple image gallery. Users can store images with descriptions and like other peoples images. It was created in a weekend for the Full Stack Engineering course at [Prime Digital Academy](https://www.primeacademy.io/).
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+![Image Gallery Screenshot](./images/imageGallery.png)
 
-![Image Gallery Screenshot]('images/imageGallery.png')
