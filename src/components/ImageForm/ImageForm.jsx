@@ -6,6 +6,7 @@ import './ImageForm.css';
 
 function ImageForm({ getImages }) {
 
+    // state variables for inputs
     const [ urlInput, setUrlInput ] = useState('');
     const [ descriptionInput, setDescriptionInput ] = useState('');
 
@@ -14,6 +15,7 @@ function ImageForm({ getImages }) {
     const handleSubmit = (e) => {
         e.preventDefault();
 
+        // data to send to server
         const data = {
             path: 'images/' + urlInput,
             description: descriptionInput,
