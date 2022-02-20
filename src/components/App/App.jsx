@@ -5,10 +5,11 @@ import './App.css';
 
 // mui theme
 import { createTheme } from '@mui/material/styles';
+import { ThemeProvider } from '@emotion/react';
 
 // component imports
 import GalleryList from '../GalleryList/GalleryList';
-import { ThemeProvider } from '@emotion/react';
+import ImageForm from '../ImageForm/ImageForm';
 
 function App() {
 
@@ -59,6 +60,8 @@ function App() {
                     <h1 className="App-title">Gallery of My Life</h1>
                 </header>
                 {/* <p>Gallery goes here</p> */}
+                <ImageForm />
+
                 <GalleryList images={images} updateImage={updateImage} />
             </ThemeProvider>
         </div>
