@@ -1,0 +1,22 @@
+.formContainer {
+    width: 300px;
+    height: max-content;
+    margin:  10px auto;
+    position: sticky;
+    top: 1rem;
+}
+
+.formContainer form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.formContainer Button {
+    width: max-content;
+}
+
+.formContainer img {
+    width: 100%;
+    margin-top: 1rem;
+}

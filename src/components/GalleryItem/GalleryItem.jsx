@@ -36,7 +36,7 @@ function GalleryItem({ image, updateImage, height }) {
                     variant="contained"
                     onClick={handleClickLike}
                     size="small"
-                    endIcon={<ThumbUpIcon />}
+                    endIcon={<ThumbUpIcon className="icon" />}
                     color="primary"
                 >
                     { image.likes }

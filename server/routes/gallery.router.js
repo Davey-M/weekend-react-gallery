@@ -58,4 +58,30 @@ router.get('/', (req, res) => {
         })
 }); // END GET Route
 
+// POST Route
+router.post('/', (req, res) => {
+    const sqlText = `
+        INSERT INTO "images" ("path", "description", "likes", "image-width", "image-height")
+        VALUES
+            ($1, $2, 0, $3, $4);
+    `
+
+    const { path, description, width, height } = req.body;
+    const sqlOptions = [
+        path,
+        description,
+        width,
+        height,
+    ]
+
+    pool.query(sqlText, sqlOptions)
+        .then(response => {
+            res.sendStatus(201);
+        })
+        .catch(err => {
+            console.error('Error with post route:', err);
+            res.sendStatus(500);
+        })
+});
+
 module.exports = router;
