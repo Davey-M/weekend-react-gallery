@@ -23,7 +23,7 @@ function ImageForm({ getImages }) {
             height: previewImage.current.naturalHeight,
         }
 
-        // console.log(data);
+        // console.log(data); // test
 
         Axios.post('/gallery', data)
             .then(response => {
@@ -35,7 +35,6 @@ function ImageForm({ getImages }) {
             .catch(err => {
                 console.error('Error with post:', err);
             })
-
     }
 
     return (

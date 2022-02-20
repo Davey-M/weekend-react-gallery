@@ -1,10 +1,10 @@
-import { useRef, useState, useEffect } from "react";
-import { Button, IconButton } from "@mui/material";
+import { useState } from "react";
+import { Button } from "@mui/material";
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 
 import './GalleryItem.css';
 
-function GalleryItem({ image, updateImage, height }) {
+function GalleryItem({ image, updateImage }) {
 
     const [ description, toggleDescription ] = useState(false);
 
@@ -21,11 +21,8 @@ function GalleryItem({ image, updateImage, height }) {
             <img 
                 src={ image.path }
                 alt="Image Not Found"
-                style={{borderRadius: '4px'}}
                 onClick={ handleDescriptionToggle }
                 className='image'
-                height={height + 'px'}
-                // style={imageHeight}
             />
             {description && <p className="description">{ image.description }</p>}
             <div className="image-footer">
