@@ -63,7 +63,7 @@ function App() {
             <div className="App">
                 <ThemeProvider theme={theme}>
                     <header className="App-header">
-                        <h1 className="App-title">Gallery of My Life</h1>
+                        <h1 className="App-title">React Image Gallery</h1>
                     </header>
                     {/* <p>Gallery goes here</p> */}
                     <main>
