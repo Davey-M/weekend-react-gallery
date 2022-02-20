@@ -133,6 +133,9 @@ function GalleryItem({ image, updateImage, getImages }) {
                     { image.likes }
                 </Button>
             </div>
+            <div className="image-header">
+                <p>{ image.likes }</p>
+            </div>
         </div>
     )
 }
