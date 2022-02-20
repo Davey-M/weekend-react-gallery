@@ -66,7 +66,7 @@ function App() {
                             getImages={getImages}
                         />
 
-                        <GalleryList images={images} updateImage={updateImage} />
+                        <GalleryList images={images} updateImage={updateImage} getImages={getImages} />
                     </main>
                 </ThemeProvider>
             </div>

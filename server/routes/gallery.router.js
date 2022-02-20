@@ -84,4 +84,22 @@ router.post('/', (req, res) => {
         })
 });
 
+router.delete('/:id', (req, res) => {
+
+    const sqlText = `
+        DELETE FROM "images" WHERE "id" = $1;
+    `
+
+    const sqlOptions = [req.params.id];
+
+    pool.query(sqlText, sqlOptions)
+        .then(response => {
+            res.sendStatus(200);
+        })
+        .catch(err => {
+            console.error('Error with delete route:', err);
+            res.sendStatus(500);
+        })
+})
+
 module.exports = router;

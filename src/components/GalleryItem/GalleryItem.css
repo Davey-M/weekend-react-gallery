@@ -2,11 +2,12 @@
     position: relative;
     margin: 0rem;
     border-radius: 4px;
+    height: 300px;
 }
 
 .galleryImage .description {
-    width: 100%;
-    height: 100%;
+    width: calc(100% - 80px);
+    height: calc(100% - 20px);
     position: absolute;
     top: 0;
     left: 0;
@@ -14,17 +15,42 @@
     margin: 0rem;
     color: #ffffff;
     pointer-events: none;
+    border-radius: 4px;
+    padding: 10px 40px;
+}
+
+.galleryImage:hover .image-footer {
+    opacity: 1;
 }
 
 .galleryImage .image-footer {
     width: max-content;
     text-align: right;
     position: absolute;
-    bottom: 10px;
+    bottom: 5px;
     right: 5px;
     padding: 5px;
     background-color: #ffffff96;
     border-radius: 4px;
+    opacity: 0;
+    transition: opacity .2s;
+}
+
+.galleryImage .image-header {
+    width: max-content;
+    text-align: left;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: var(--main);
+    border-radius: 4px;
+    z-index: 5;
+    color: white;
+    padding: 5px;
+}
+
+.galleryImage .image-header p {
+    margin: 0;
 }
 
 .image {
