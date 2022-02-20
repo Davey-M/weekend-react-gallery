@@ -60,7 +60,9 @@ function App() {
                     <h1 className="App-title">Gallery of My Life</h1>
                 </header>
                 {/* <p>Gallery goes here</p> */}
-                <ImageForm />
+                <ImageForm 
+                    getImages={getImages}
+                />
 
                 <GalleryList images={images} updateImage={updateImage} />
             </ThemeProvider>
