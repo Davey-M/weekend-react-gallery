@@ -16,10 +16,6 @@ function GalleryItem({ image, updateImage, height }) {
         toggleDescription(!description);
     }
 
-    const imageHeight = {
-        height: height,
-    }
-
     return (
         <div className="galleryImage">
             <img 
@@ -28,7 +24,8 @@ function GalleryItem({ image, updateImage, height }) {
                 style={{borderRadius: '4px'}}
                 onClick={ handleDescriptionToggle }
                 className='image'
-                style={imageHeight}
+                height={height + 'px'}
+                // style={imageHeight}
             />
             {description && <p className="description">{ image.description }</p>}
             <div className="image-footer">

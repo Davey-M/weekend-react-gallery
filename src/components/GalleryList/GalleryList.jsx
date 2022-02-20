@@ -7,13 +7,22 @@ import './GalleryList.css'
 function GalleryList({ images, updateImage }) {
 
     const imageContainer = useRef();
-    const [ width, setWidth ] = useState(Math.floor(window.innerWidth * .7));
+    const [ containerWidth, setContainerWidth ] = useState(900);
 
     // const width = Math.floor(window.innerWidth * .7);
 
+    const [ imageRows, setImageRows ] = useState([]);
+    const [ rowHeights, setRowHeights ] = useState([]);
+
+    // const imageRows = []
+
+    // const rowHeights = []
+
     const setImageHeights = () => {
 
-        const containerWidth = imageContainer.current.clientWidth;
+        let currentWidth = 0;
+
+        let currentRow = 0;
 
         for (let i = 0 ; i < images.length; i++) {
             console.log(images[i]);
@@ -24,15 +33,42 @@ function GalleryList({ images, updateImage }) {
             let imageWidth = image['image-width'] * scaleFactor;
             let imageHeight = image['image-height'] * scaleFactor;
 
-            console.log({
-                imageWidth, imageHeight
-            });
+            if (currentWidth + (imageWidth + 10) > containerWidth) {
+
+                let gap = (containerWidth - currentWidth) - 10;
+                let scalePercent = gap / containerWidth;
+
+                console.log(scalePercent);
+
+                currentWidth = imageWidth;
+
+                let newHeight = 300 + (300 * scalePercent);
+                // rowHeights.push(newHeight);
+                setRowHeights([...rowHeights, newHeight]);
+                currentRow++;
+                // imageRows.push(currentRow);
+                setImageRows([...imageRows, currentRow])
+            }
+            else if (i === images.length - 1) {
+                currentWidth += (imageWidth + 10);
+                setImageRows([...imageRows, currentRow])
+                setRowHeights([...rowHeights, 300]);
+            }
+            else {
+                currentWidth += (imageWidth + 10);
+                setImageRows([...imageRows, currentRow])
+            }
         }
+
+        console.log({
+            imageRows,
+            rowHeights
+        })
     }
 
     useEffect(() => {
-        setImageHeights();
-    });
+        setImageHeights()
+    }, [])
 
     // window.addEventListener('resize', setImageHeights);
 
@@ -48,7 +84,7 @@ function GalleryList({ images, updateImage }) {
                 ref={imageContainer}
             >
                 {images.map((image, index) => {
-                    return <GalleryItem key={image.id} image={image} updateImage={updateImage} height={300} />
+                    return <GalleryItem key={image.id} image={image} updateImage={updateImage} height={rowHeights[imageRows[index]]} />
                 })}
             </div>
         </>
