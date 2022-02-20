@@ -36,17 +36,13 @@ function GalleryItem({ image, updateImage, getImages }) {
         toggleDescription(!description);
     }
 
+    // remove and image from the database
     const deleteImage = () => {
-        // Axios.delete(`/gallery/${image.id}`)
-        //     .then(response => {
-        //         getImages();
-        //     })
-        //     .catch(err => {
-        //         console.error('Error with delete ajax', err);
-        //     })
-
+        // sweet alerts gives a popup to ensure the user doesn't accidentally delete their data
         Swal.fire({
             icon: 'warning',
+            // change the default popup with some react components and the material ui theme
+            // the whole thing is wrapped in a theme provider because sweet alerts renders outside of the original theme provider in app.jsx
             html: <div>
                 <ThemeProvider theme={theme}>
                     <h1>Are you sure?</h1>
@@ -86,12 +82,15 @@ function GalleryItem({ image, updateImage, getImages }) {
             .then(answer => {
                 // console.log(answer);
 
+                // send the delete request to the server
                 if (answer.isConfirmed) {
                     Axios.delete(`/gallery/${image.id}`)
                         .then(response => {
+                            // get the updated images
                             getImages();
                         })
                         .catch(err => {
+                            // handle errors
                             console.error('Error with delete ajax', err);
                         })
                 }
