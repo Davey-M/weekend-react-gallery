@@ -1,10 +1,6 @@
 .galleryImage {
-    /* width: max-content; */
-    /* margin: auto; */
     position: relative;
-    /* background-color: var(--dark); */
     margin: 0rem;
-    /* padding: 5px; */
     border-radius: 4px;
 }
 
@@ -29,17 +25,7 @@
     padding: 5px;
     background-color: #ffffff96;
     border-radius: 4px;
-    /* padding: 0rem 5px; */
-    /* margin: auto; */
 }
-
-/* .imageTall {
-    width: 290px;
-}
-
-.imageLong {
-    width: 570px;
-} */
 
 .image {
     height: 300px;
