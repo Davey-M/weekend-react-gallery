@@ -1,6 +1,8 @@
 import { TextField, Button } from '@mui/material'
 import { useState } from 'react';
 
+import './ImageForm.css';
+
 function ImageForm() {
 
     const [ urlInput, setUrlInput ] = useState('');
@@ -14,7 +16,7 @@ function ImageForm() {
     }
 
     return (
-        <>
+        <div className='formContainer'>
             <form onSubmit={handleSubmit}>
                 <TextField
                     onChange={(e) => {
@@ -38,7 +40,7 @@ function ImageForm() {
                 />
                 <Button variant="contained" onClick={handleSubmit} >Add Image</Button>
             </form>
-        </>
+        </div>
     )
 }
 

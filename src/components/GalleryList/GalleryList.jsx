@@ -58,7 +58,7 @@ function GalleryList({ images, updateImage }) {
 
     setImageHeights();
 
-    window.addEventListener('resize', setImageHeights);
+    // window.addEventListener('resize', setImageHeights);
 
     // useEffect(() => {
     //     setImageHeights();
