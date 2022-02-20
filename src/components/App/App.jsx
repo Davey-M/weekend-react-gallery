@@ -13,6 +13,7 @@ import ImageForm from '../ImageForm/ImageForm';
 
 function App() {
 
+    // change the buttons from blue to yellowOrange
     const theme = createTheme({
         palette: {
             primary: {
@@ -22,8 +23,10 @@ function App() {
         }
     })
 
+    // state variables
     const [ images, setImages ] = useState([]);
 
+    // get images from the server
     const getImages = () => {
         Axios.get('/gallery')
             .then(response => {
@@ -34,6 +37,7 @@ function App() {
             })
     }
 
+    // update the like count of the images on the server
     const updateImage = (id, likes) => {
 
         const data = {
@@ -49,6 +53,7 @@ function App() {
             });
     }
 
+    // run get images once on initial load
     useEffect(() => {
         getImages();
     }, []);

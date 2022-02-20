@@ -10,6 +10,8 @@ function ImageForm({ getImages }) {
     const [ urlInput, setUrlInput ] = useState('');
     const [ descriptionInput, setDescriptionInput ] = useState('');
 
+    // get the preview image so its height and width can be stored.
+    // the height and width were never used but I may come back to add in the scaling feature I wanted
     const previewImage = useRef();
 
     const handleSubmit = (e) => {
@@ -25,10 +27,13 @@ function ImageForm({ getImages }) {
 
         // console.log(data); // test
 
+        // send data to the server
         Axios.post('/gallery', data)
             .then(response => {
+                // get the updated images
                 getImages();
 
+                // clear input fields
                 setUrlInput('');
                 setDescriptionInput('');
             })

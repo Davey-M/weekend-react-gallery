@@ -84,6 +84,7 @@ router.post('/', (req, res) => {
         })
 });
 
+// delete an item from the database
 router.delete('/:id', (req, res) => {
 
     const sqlText = `
