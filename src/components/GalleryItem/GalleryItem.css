@@ -1,10 +1,6 @@
 .galleryImage {
-    /* width: max-content; */
-    /* margin: auto; */
     position: relative;
-    background-color: var(--dark);
     margin: 0rem;
-    padding: 5px;
     border-radius: 4px;
 }
 
@@ -21,18 +17,17 @@
 }
 
 .galleryImage .image-footer {
-    width: 100%;
+    width: max-content;
     text-align: right;
+    position: absolute;
+    bottom: 10px;
+    right: 5px;
+    padding: 5px;
+    background-color: #ffffff96;
+    border-radius: 4px;
 }
-
-/* .imageTall {
-    width: 290px;
-}
-
-.imageLong {
-    width: 570px;
-} */
 
 .image {
-    max-height: 100%;
+    height: 300px;
+    border-radius: 4px;
 }
