@@ -21,7 +21,7 @@ function ImageForm({ getImages }) {
             height: previewImage.current.naturalHeight,
         }
 
-        console.log(data);
+        // console.log(data);
 
         Axios.post('/gallery', data)
             .then(response => {
@@ -39,11 +39,11 @@ function ImageForm({ getImages }) {
     return (
         <div className='formContainer'>
             <form onSubmit={handleSubmit}>
-                <img src={'images/' + urlInput} alt="" ref={previewImage}/>
                 <TextField
                     onChange={(e) => {
                         setUrlInput(e.target.value);
                     }}
+                    value={urlInput}
                     onSubmit={handleSubmit}
                     fullWidth
                     label="URL"
@@ -53,6 +53,7 @@ function ImageForm({ getImages }) {
                     onChange={(e) => {
                         setDescriptionInput(e.target.value);
                     }}
+                    value={descriptionInput}
                     onSubmit={handleSubmit}
                     fullWidth
                     multiline
@@ -62,6 +63,7 @@ function ImageForm({ getImages }) {
                 />
                 <Button variant="contained" onClick={handleSubmit} >Add Image</Button>
             </form>
+            <img src={'images/' + urlInput} alt="" ref={previewImage}/>
         </div>
     )
 }

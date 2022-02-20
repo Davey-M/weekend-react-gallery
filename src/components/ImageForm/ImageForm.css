@@ -1,6 +1,9 @@
 .formContainer {
-    width: 40%;
+    width: 300px;
+    height: max-content;
     margin:  10px auto;
+    position: sticky;
+    top: 1rem;
 }
 
 .formContainer form {
@@ -11,4 +14,9 @@
 
 .formContainer Button {
     width: max-content;
+}
+
+.formContainer img {
+    width: 100%;
+    margin-top: 1rem;
 }

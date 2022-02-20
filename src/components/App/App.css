@@ -20,3 +20,8 @@
   font-size: 1.5em;
 }
 
+main {
+    display: grid;
+    grid-template-columns: 1fr max-content;
+}
+

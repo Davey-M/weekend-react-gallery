@@ -54,18 +54,22 @@ function App() {
     }, []);
 
     return (
-        <div className="App">
-            <ThemeProvider theme={theme}>
-                <header className="App-header">
-                    <h1 className="App-title">Gallery of My Life</h1>
-                </header>
-                {/* <p>Gallery goes here</p> */}
-                <ImageForm 
-                    getImages={getImages}
-                />
+        <div>
+            <div className="App">
+                <ThemeProvider theme={theme}>
+                    <header className="App-header">
+                        <h1 className="App-title">Gallery of My Life</h1>
+                    </header>
+                    {/* <p>Gallery goes here</p> */}
+                    <main>
+                        <ImageForm 
+                            getImages={getImages}
+                        />
 
-                <GalleryList images={images} updateImage={updateImage} />
-            </ThemeProvider>
+                        <GalleryList images={images} updateImage={updateImage} />
+                    </main>
+                </ThemeProvider>
+            </div>
         </div>
     );
 }
