@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { Button } from "@mui/material";
+import { Button, IconButton } from "@mui/material";
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 import './GalleryItem.css';
 
@@ -26,6 +27,20 @@ function GalleryItem({ image, updateImage }) {
             />
             {description && <p className="description">{ image.description }</p>}
             <div className="image-footer">
+                {/* <Button
+                    variant="contained"
+                    color="error"
+                    size="small"
+                >
+                </Button> */}
+
+                <IconButton
+                        variant="contained"
+                        color="inherit"
+                        size="small"
+                >
+                    <DeleteIcon />
+                </IconButton>
                 <Button
                     variant="contained"
                     onClick={handleClickLike}
