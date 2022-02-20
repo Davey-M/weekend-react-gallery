@@ -17,6 +17,8 @@
     pointer-events: none;
     border-radius: 4px;
     padding: 10px 40px;
+    white-space: pre-wrap;
+    text-align: left;
 }
 
 .galleryImage:hover .image-footer {
